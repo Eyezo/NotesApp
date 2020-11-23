@@ -1,0 +1,18 @@
+﻿<Window x:Class="MyCuteClientApp.MenueScreen"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        Title="MenueScreen" Height="325" Width="499">
+    <Grid Name="MScreen" Height="Auto">
+        <Border Background="{StaticResource RadialBrush}">
+            <Grid Height="289">
+                <Button Content="Budgets" Height="23" HorizontalAlignment="Left" Margin="71,89,0,0" Name="btnBudgets" VerticalAlignment="Top" Width="107" Click="btnBudgets_Click" FontWeight="Bold" FontStyle="Italic" Background="#FF8D8DD4" BorderBrush="#FF7BABDF" />
+                <Button Content="Create Notes" Height="23" HorizontalAlignment="Left" Margin="71,139,0,0" Name="Notes" VerticalAlignment="Top" Width="107" Click="Notes_Click" BorderThickness="3" FontWeight="Bold" FontStyle="Italic" Background="#FF8D8DD4" BorderBrush="#FF7BABDF" />
+                <Button Content="Student" Height="23" HorizontalAlignment="Left" Margin="176,35,0,0" Name="btnStudent" VerticalAlignment="Top" Width="107" Click="btnStudent_Click" FontWeight="Bold" Background="#FF8D8DD4" BorderBrush="#FF7BABDF" />
+                <Button Content="View Budget" Height="23" HorizontalAlignment="Left" Margin="281,89,0,0" Name="btnViewBudget" VerticalAlignment="Top" Width="107" Click="btnViewBudget_Click" FontWeight="Bold" FontStyle="Italic" Background="#FF8D8DD4" BorderBrush="#FF7BABDF" />
+                <Button Content="View Note" Height="23" Name="btnViewNote" Width="107" Click="btnViewNote_Click" Margin="0,136,87,125" HorizontalAlignment="Right" FontWeight="Bold" FontStyle="Italic" Background="#FF8D8DD4" BorderBrush="#FF7BABDF" />
+                <Button Content="Info" Height="23" HorizontalAlignment="Left" Margin="176,187,0,0" Name="btnInfo" VerticalAlignment="Top" Width="107" Background="#FF8D8DD4" BorderBrush="#FF7BABDF" FontWeight="Bold" FontStyle="Italic" Click="btnInfo_Click" />
+            </Grid>
+        </Border>
+
+    </Grid>
+</Window>

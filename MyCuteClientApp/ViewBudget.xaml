@@ -1,0 +1,24 @@
+﻿<Window x:Class="MyCuteClientApp.ViewBudget"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        Title="ViewBudget" Height="300" Width="300" mc:Ignorable="d" xmlns:d="http://schemas.microsoft.com/expression/blend/2008" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" xmlns:my="clr-namespace:MyCuteClientApp.CuteService" Loaded="Window_Loaded">
+    <Window.Resources>
+        <CollectionViewSource x:Key="budgetDetailViewSource" d:DesignSource="{d:DesignInstance my:BudgetDetail, CreateList=True}" />
+    </Window.Resources>
+    <Grid Name="BScreen" Height="Auto">
+        <Border Background="{StaticResource RadialBrush}">
+            <Grid DataContext="{StaticResource budgetDetailViewSource}">
+                <TextBox Height="23" HorizontalAlignment="Left" Margin="152,6,0,0" Name="txtBudgetId" VerticalAlignment="Top" Width="86" Text="{Binding Path=budgetId, Mode=TwoWay, ValidatesOnExceptions=true, NotifyOnValidationError=true}" />
+                <TextBlock Height="23" HorizontalAlignment="Left" Margin="14,9,0,0" Name="textBlockBudhetId" Text="enter budget ID" VerticalAlignment="Top" Width="97" />
+                <TextBox Height="23" HorizontalAlignment="Left" Margin="150,35,0,0" Name="txtBudgetItem" VerticalAlignment="Top" Width="88" Text="{Binding Path=budgetItem, Mode=TwoWay, ValidatesOnExceptions=true, NotifyOnValidationError=true}" IsEnabled="False" />
+                <TextBlock Height="23" HorizontalAlignment="Left" Margin="14,38,0,0" Name="textBlockBudhetItem" Text="enter Item" VerticalAlignment="Top" Width="97" />
+                <TextBox Height="23" HorizontalAlignment="Left" Margin="150,64,0,0" Name="txtBudgetItemPrice" VerticalAlignment="Top" Width="88" Text="{Binding Path=budgetPrice, Mode=TwoWay, ValidatesOnExceptions=true, NotifyOnValidationError=true}" IsEnabled="False" />
+                <TextBlock Height="23" HorizontalAlignment="Left" Margin="14,67,0,0" Name="textBlockBudgetItemPrice" Text="enter Item Price" VerticalAlignment="Top" Width="97" />
+                <TextBox Height="23" HorizontalAlignment="Left" Margin="150,93,0,0" Name="txtStudentId" VerticalAlignment="Top" Width="88" Text="{Binding Path=studentId, Mode=TwoWay, ValidatesOnExceptions=true, NotifyOnValidationError=true}" IsEnabled="False" />
+                <TextBlock Height="23" Margin="14,96,165,0" Name="textBlockStudentId" Text="student ID" VerticalAlignment="Top" />
+                <Button Content="Search" Height="23" HorizontalAlignment="Left" Margin="14,133,0,0" Name="btnSearch" VerticalAlignment="Top" Width="105" Click="btnSearch_Click" Background="#FF8D8DD4" BorderBrush="#FF7BABDF" FontWeight="Bold" FontStyle="Italic" Opacity="100" />
+                <Button Content="Save changes" Height="23" HorizontalAlignment="Left" Margin="14,162,0,0" Name="btnSave" VerticalAlignment="Top" Width="105" Click="btnSave_Click" BorderBrush="#FF7BABDF" Background="#FF8D8DD4" FontWeight="Bold" FontStyle="Italic" Opacity="100" />
+            </Grid>
+        </Border>
+    </Grid>
+</Window>

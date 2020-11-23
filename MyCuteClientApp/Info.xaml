@@ -1,0 +1,21 @@
+﻿<Window x:Class="MyCuteClientApp.Info"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        Title="Info" Height="300" Width="479" mc:Ignorable="d" xmlns:d="http://schemas.microsoft.com/expression/blend/2008" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" xmlns:my="clr-namespace:MyCuteClientApp.CuteService" Loaded="Window_Loaded">
+    <Window.Resources>
+        <CollectionViewSource x:Key="projectDetailsViewSource" d:DesignSource="{d:DesignInstance my:ProjectDetails, CreateList=True}" />
+    </Window.Resources>
+    <Grid DataContext="{StaticResource projectDetailsViewSource}">
+        <Border Background="{StaticResource RadialBrush}">
+            <DataGrid AutoGenerateColumns="False" EnableRowVirtualization="True" Height="200" ItemsSource="{Binding}" Name="projectDetailsDataGrid" RowDetailsVisibilityMode="VisibleWhenSelected" Width="399" Background="#FFCDCFE8" BorderBrush="#FFDCE8EB">
+                <DataGrid.Columns>
+                    <DataGridTextColumn x:Name="groupNameColumn" Binding="{Binding Path=groupName}" Header="group Name" Width="SizeToHeader" />
+                    <DataGridTextColumn x:Name="projectDescColumn" Binding="{Binding Path=projectDesc}" Header="project Desc" Width="SizeToHeader" />
+                    <DataGridTextColumn x:Name="projectIdColumn" Binding="{Binding Path=projectId}" Header="project Id" Width="SizeToHeader" />
+                    <DataGridTextColumn x:Name="projectNameColumn" Binding="{Binding Path=projectName}" Header="project Name" Width="SizeToHeader" />
+                    <DataGridTextColumn x:Name="studentNumberColumn" Binding="{Binding Path=studentNumber}" Header="student Number" Width="SizeToHeader" />
+                </DataGrid.Columns>
+            </DataGrid>
+        </Border>
+    </Grid>
+</Window>

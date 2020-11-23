@@ -1,0 +1,30 @@
+﻿<Window x:Class="MyCuteClientApp.CreateProfile"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        Title="CreateProfile" Height="500" Width="500" mc:Ignorable="d" xmlns:d="http://schemas.microsoft.com/expression/blend/2008" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" xmlns:my="clr-namespace:MyCuteClientApp.CuteService" Loaded="Window_Loaded">
+    <Window.Resources>
+        <CollectionViewSource x:Key="studentDetailViewSource"  />
+        
+        <CollectionViewSource x:Key="studentViewSource1" d:DesignSource="{d:DesignInstance my:Student, CreateList=True}" />
+    </Window.Resources>
+    <Grid Name="CPScreen" Height="Auto" DataContext="{StaticResource studentDetailViewSource}">
+        <Border Background="{StaticResource RadialBrush}">
+            <Grid Name="createProfile" DataContext="{StaticResource studentDetailViewSource}">
+                <TextBox Height="23" HorizontalAlignment="Left" Margin="269,94,0,0" Name="txtEnterStudentName" VerticalAlignment="Top" Width="120" />
+                <TextBlock Height="23" HorizontalAlignment="Left" Margin="62,97,0,0" Name="txtBlockEnterStudentName" Text="enter student Name" VerticalAlignment="Top" Width="120" />
+                <TextBox Height="23" HorizontalAlignment="Left" Margin="269,123,0,0" Name="txtStudentPassword" VerticalAlignment="Top" Width="120"  />
+                <TextBlock Height="26" HorizontalAlignment="Left" Margin="62,126,0,0" Name="txtBlockStudentPassword" Text="enter Password" VerticalAlignment="Top" Width="96" />
+                <Button Content="Save" Height="23" HorizontalAlignment="Left" Margin="62,174,0,0" Name="btnSave" VerticalAlignment="Top" Width="120" Click="btnSave_Click" FontWeight="Bold" FontStyle="Italic" BorderBrush="#FF7BABDF" Background="#FF8D8DD4" />
+                <DataGrid AutoGenerateColumns="False" EnableRowVirtualization="True" Height="200" HorizontalAlignment="Left" ItemsSource="{Binding Source={StaticResource studentViewSource1}}" Margin="30,253,0,0" Name="studentDataGrid" RowDetailsVisibilityMode="VisibleWhenSelected" VerticalAlignment="Top" Width="264" Background="#FFCDCFE8" BorderBrush="#FFDCE8EB">
+                    <DataGrid.Columns>
+                        <DataGridTextColumn x:Name="studentIdColumn" Binding="{Binding Path=studentId}" Header="student Id" Width="SizeToHeader" IsReadOnly="True" />
+                        <DataGridTextColumn x:Name="studentNameColumn" Binding="{Binding Path=StudentName}" Header="Student Name" Width="SizeToHeader" IsReadOnly="True" />
+                        <DataGridTextColumn x:Name="studentPasswordColumn" Binding="{Binding Path=StudentPassword}" Header="Student Password" Width="SizeToHeader" Visibility="Hidden" />
+                    </DataGrid.Columns>
+                </DataGrid>
+                <TextBox Height="23" HorizontalAlignment="Left" Margin="269,65,0,0" Name="txtstudentNumber" VerticalAlignment="Top" Width="120" Text="{Binding Path=studentId, Mode=TwoWay, ValidatesOnExceptions=true, NotifyOnValidationError=true, Source={StaticResource studentViewSource1}}" />
+                <TextBlock Height="23" HorizontalAlignment="Left" Margin="62,68,0,0" Name="textBlockStudentNumber" Text="enter student number" VerticalAlignment="Top" Width="120" />
+            </Grid>
+        </Border>
+    </Grid>
+</Window>

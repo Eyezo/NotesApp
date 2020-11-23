@@ -1,0 +1,28 @@
+﻿<Window x:Class="MyCuteClientApp.CreateNote"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        Title="CreateNote" Height="500" Width="500" mc:Ignorable="d" xmlns:d="http://schemas.microsoft.com/expression/blend/2008" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" xmlns:my="clr-namespace:MyCuteClientApp.CuteService" Loaded="Window_Loaded">
+    <Window.Resources>
+        <CollectionViewSource x:Key="noteViewSource" d:DesignSource="{d:DesignInstance my:Note, CreateList=True}" />
+    </Window.Resources>
+    <Grid Name="CNScrean" Height="Auto">
+        <Border Background="{StaticResource RadialBrush}">
+            <Grid DataContext="{StaticResource noteViewSource}">
+                <TextBox Height="23" HorizontalAlignment="Left" Margin="215,56,0,0" Name="txtNoteId" VerticalAlignment="Top" Width="120" Text="{Binding Path=noteId, Mode=TwoWay, ValidatesOnExceptions=true, NotifyOnValidationError=true}" />
+                <TextBox Height="23" HorizontalAlignment="Left" Margin="215,185,0,0" Name="txtStudentId" VerticalAlignment="Top" Width="120" Text="{Binding Path=studentId, Mode=TwoWay, ValidatesOnExceptions=true, NotifyOnValidationError=true}" />
+                <TextBlock Height="23" HorizontalAlignment="Left" Margin="36,59,0,0" Name="textBlockNoteId" Text="enter note ID" VerticalAlignment="Top" Width="107" />
+                <TextBlock Height="23" HorizontalAlignment="Left" Margin="36,101,0,0" Name="textBlockNoteContent" Text="make note" VerticalAlignment="Top" Width="107" />
+                <TextBlock Height="23" HorizontalAlignment="Left" Margin="36,188,0,0" Name="textBlockStudentId" Text="student ID" VerticalAlignment="Top" Width="107" />
+                <TextBox Height="39" HorizontalAlignment="Left" Margin="215,101,0,0" Name="txtNoteContent" VerticalAlignment="Top" Width="120" Text="{Binding Path=noteContent, Mode=TwoWay, ValidatesOnExceptions=true, NotifyOnValidationError=true}" />
+                <DataGrid AutoGenerateColumns="False" EnableRowVirtualization="True" Height="200" HorizontalAlignment="Left" ItemsSource="{Binding}" Margin="6,253,0,0" Name="noteDataGrid" RowDetailsVisibilityMode="VisibleWhenSelected" VerticalAlignment="Top" Width="200" Background="#FFCDCFE8" BorderBrush="#FFDCE8EB">
+                    <DataGrid.Columns>
+                        <DataGridTextColumn x:Name="noteContentColumn" Binding="{Binding Path=noteContent}" Header="note Content" Width="SizeToHeader" />
+                        <DataGridTextColumn x:Name="noteIdColumn" Binding="{Binding Path=noteId}" Header="note Id" Width="SizeToHeader" />
+                        <DataGridTextColumn x:Name="studentIdColumn" Binding="{Binding Path=studentId}" Header="student Id" Width="SizeToHeader" />
+                    </DataGrid.Columns>
+                </DataGrid>
+                <Button Content="Save" Height="27" HorizontalAlignment="Left" Margin="36,217,0,0" Name="btnSave" VerticalAlignment="Top" Width="75" Click="btnSave_Click" Background="#FF8D8DD4" BorderBrush="#FF7BABDF" FontStyle="Italic" FontWeight="Bold" />
+            </Grid>
+        </Border>
+    </Grid>
+</Window>

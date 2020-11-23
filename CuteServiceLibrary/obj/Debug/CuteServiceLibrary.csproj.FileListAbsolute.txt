@@ -1,0 +1,6 @@
+C:\Users\soulchannel\Desktop\skul\O\CuteServiceLibrary\CuteServiceLibrary\bin\Debug\CuteServiceLibrary.dll.config
+C:\Users\soulchannel\Desktop\skul\O\CuteServiceLibrary\CuteServiceLibrary\bin\Debug\CuteServiceLibrary.dll
+C:\Users\soulchannel\Desktop\skul\O\CuteServiceLibrary\CuteServiceLibrary\bin\Debug\CuteServiceLibrary.pdb
+C:\Users\soulchannel\Desktop\skul\O\CuteServiceLibrary\CuteServiceLibrary\obj\Debug\ResolveAssemblyReference.cache
+C:\Users\soulchannel\Desktop\skul\O\CuteServiceLibrary\CuteServiceLibrary\obj\Debug\CuteServiceLibrary.dll
+C:\Users\soulchannel\Desktop\skul\O\CuteServiceLibrary\CuteServiceLibrary\obj\Debug\CuteServiceLibrary.pdb
